@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>Push it to me, baby</title>
+  </head>
+<body>
+  <time></time>
+  <div id="container">Probemos la melcocha<7div>
+  <script src="socket.io/socket.io.js"></script>
+  <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <script>
+    var socket = io.connect('http://pushmebaby.herokuapp.com');
+    socket.on('notification', function (data) {
+        $('#container').html(data.test.sample[0]);
+        $('time').html('Ultimo empujoncito: ' + data.time);
+    });
+  </script>  
+  </body>
+</html>
